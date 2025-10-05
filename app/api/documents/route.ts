@@ -9,10 +9,7 @@ export async function GET(request: NextRequest) {
       .order('id', { ascending: false });
 
     if (error) {
-      console.error('Supabase error:', error);
-      return NextResponse.json(
-        { error: 'Failed to fetch documents' },
-        { status: 500 }
+     
       );
     }
 
@@ -20,10 +17,7 @@ export async function GET(request: NextRequest) {
       documents: data || [],
     });
   } catch (error: any) {
-    console.error('Fetch error:', error);
-    return NextResponse.json(
-      { error: error.message || 'Failed to fetch documents' },
-      { status: 500 }
+    
     );
   }
 }
